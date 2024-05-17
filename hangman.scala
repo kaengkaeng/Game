@@ -12,11 +12,12 @@ class HangmanGame(wordList: List[String]):
   def initializeGame(): Unit = {
     choice = wordList(Random.nextInt(wordList.length))
     println(choice)
+   // display 리스트 길이만큼 '_'를 쓴다 
     display = List.fill(choice.length)('_')
     endOfGame = false
     lives = 6 // 6 times try :)
-    println(choice) // 선택된 단어 출력 (테스트용)
-    println(" Start Game.Chek word of length : " + display.mkString(" "))
+    //println(choice) // 선택된 단어 출력 (테스트용)
+    println("Start  Game.Chek word of length : " + display.mkString(" "))
   }
 
   // 사용자 입력 받기
@@ -28,7 +29,7 @@ class HangmanGame(wordList: List[String]):
   def checkGuess(guess: Char): Unit = {
     var correctGuess = false
     for (i <- choice.indices) {
-      val letter = choice(i)
+      val letter = choice(i) // letter 변수와 인덱스 i의 value가 같다. 
       if (letter == guess) {
         display = display.updated(i, letter) // i 번째 인덱스에 value(=letter) 추가
         correctGuess = true
