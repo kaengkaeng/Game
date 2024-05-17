@@ -70,7 +70,7 @@ class HangmanGame(wordList: List[String]):
 
 
 def main(): Unit = {
-  val wordList = List("hallo", "hyojoo", "oliver","brezel")
+  val wordList = List("hallo", "sun", "himmel","brezel", "wurst")
   val hangmanGame = new HangmanGame(wordList)
   hangmanGame.initializeGame()
   hangmanGame.playGame()
